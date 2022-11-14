@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.439" height="54.972" viewBox="0 0 46.439 54.972">
+  <defs>
+    <filter id="Icon_ionic-ios-lock" x="0" y="0" width="46.439" height="54.972" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Icon_ionic-ios-lock)">
+    <path id="Icon_ionic-ios-lock-2" data-name="Icon ionic-ios-lock" d="M31.634,16.173H29.5v-4.15a8.532,8.532,0,1,0-17.063-.116v4.266H10.3A3.565,3.565,0,0,0,6.75,19.728V36.791A3.565,3.565,0,0,0,10.3,40.346H31.634a3.565,3.565,0,0,0,3.555-3.555V19.728A3.565,3.565,0,0,0,31.634,16.173Zm-9.42,11.091v6.114a1.274,1.274,0,0,1-1.182,1.28,1.246,1.246,0,0,1-1.306-1.244v-6.15a2.844,2.844,0,1,1,2.488,0Zm4.8-11.091H14.926V11.907a6.043,6.043,0,0,1,12.087,0Z" transform="translate(2.25 2.63)" fill="#4d93fd"/>
+  </g>
+</svg>

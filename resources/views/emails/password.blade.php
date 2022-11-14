@@ -1,0 +1,1 @@
+Querido/a {!! $user->name !!}, Su nombre de usuario es {!! $user->username !!}, Ingrese al siguiente enlace para reestablecer su contraseña: {!! url('password/reset/'.$token) !!}

@@ -1,0 +1,124 @@
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul {
+	padding-top: 20px; position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 2px dashed rgb(27,69,234);
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 2px dashed rgb(27,69,234);
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 2px dashed rgb(27,69,234);
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 2px dashed rgb(27,69,234);
+	width: 0; height: 20px;
+}
+
+.tree li a{
+	border: 0px solid #004567;
+        background: #0092DA;
+        padding: 10px 15px;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: #fff;
+        font-family: Open Sans;
+        font-size: 14px;
+        display: inline-block;
+        border-radius:100px !important;
+        -webkit-border-radius: 100px !important;
+        -moz-border-radius: 100px !important;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+  
+      width: 80px;
+    height: 80px;
+  	opacity:.85;
+  	background: url(/assets/images/pmgs/circulo3.png) center center no-repeat;
+  background-size: contain;
+  	
+}
+.tree li.main > a{
+    background-image: url(/assets/images/pmgs/circulo2.png);
+    
+}
+.tree li small{
+ display:block;width:60px;text-align:center;margin:0 auto;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 767px) {
+    .treeAvatar{
+        width: 40px !important;
+        height: 40px !important;
+        padding: 0 !important;
+    }
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	/*background: #c8e4f8; color: #000; border: 0px solid #94a0b4;*/
+  opacity:1;
+  box-shadow:2px 2px 8px -1px rgb(0 0 0 / 50%);
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:ho
